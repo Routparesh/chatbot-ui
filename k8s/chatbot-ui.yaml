@@ -14,10 +14,10 @@ spec:
         app: chatbot
     spec:
       containers:
-      - name: chatbot
-        image: sevenajay/chatbot:latest
-        ports:
-        - containerPort: 3000   # Use port 3000
+        - name: chatbot
+          image: routparesh/chatbot:latest
+          ports:
+            - containerPort: 3000 # Use port 3000
 
 ---
 apiVersion: v1
@@ -28,8 +28,7 @@ spec:
   selector:
     app: chatbot
   ports:
-  - protocol: TCP
-    port: 80                 # Expose port 80
-    targetPort: 3000
+    - protocol: TCP
+      port: 80 # Expose port 80
+      targetPort: 3000
   type: LoadBalancer
-
